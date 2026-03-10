@@ -49,6 +49,17 @@ void deveRetornarErroQuandoLoginEstiverVazioNoCadastro() {
     assertEquals("O campo login é obrigatório", resultado);
 }
 
+@Test
+void deveRetornarErroQuandoNomeEstiverVazioNoCadastro() {
+    // Arrange - TC009
+    
+    Usuario usuarioSemNome = new Usuario("login123", "senha123");
+    usuarioSemNome.setNome(""); ing resultado = cadastroService.cadastrar(usuarioSemNome);
+
+    // Assert
+   
+    assertEquals("O campo nome é obrigatório", resultado);
+}
 
 
 }

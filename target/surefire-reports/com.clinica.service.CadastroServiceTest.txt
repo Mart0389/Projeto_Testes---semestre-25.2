@@ -1,4 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: com.clinica.service.CadastroServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.127 s -- in com.clinica.service.CadastroServiceTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.270 s <<< FAILURE! -- in com.clinica.service.CadastroServiceTest
+com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoNomeEstiverVazioNoCadastro -- Time elapsed: 3.151 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	The method setNome(String) is undefined for the type Usuario
+	ing cannot be resolved to a type
+
+	at com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoNomeEstiverVazioNoCadastro(CadastroServiceTest.java:57)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
