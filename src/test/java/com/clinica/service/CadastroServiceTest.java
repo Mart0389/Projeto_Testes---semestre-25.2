@@ -91,6 +91,23 @@ class CadastroServiceTest {
         assertEquals("usuário sem senha", resultado);
     }
 
+    @Test // TC_011
+    void deveRetornarErroQuandoEmailEstiverVazioNoCadastro() {
+        // Arrange 
+        Usuario usuarioSemEmail = new Usuario();
+        usuarioSemEmail.setLogin("123");
+        usuarioSemEmail.setNome("Rock");
+        usuarioSemEmail.setSenha("123@");
+        usuarioSemEmail.setEmail(""); 
+
+        // Act
+        String resultado = cadastroService.cadastrar(usuarioSemEmail);
+
+        // Assert
+        
+        assertEquals("usuário sem e-mail", resultado);
+    }
+
 }
 
 
