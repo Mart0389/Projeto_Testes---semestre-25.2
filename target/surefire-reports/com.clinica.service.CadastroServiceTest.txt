@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: com.clinica.service.CadastroServiceTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.891 s -- in com.clinica.service.CadastroServiceTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.675 s <<< FAILURE! -- in com.clinica.service.CadastroServiceTest
+com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoNomeEstiverVazioNoCadastro -- Time elapsed: 3.556 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <usuário sem nome> but was: <usuário cadastrado com sucesso>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
+	at com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoNomeEstiverVazioNoCadastro(CadastroServiceTest.java:74)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
