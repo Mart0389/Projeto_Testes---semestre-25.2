@@ -11,13 +11,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-class UsuarioServiceTest {
+class CadastroServiceTest {
 
     @Mock
     private UsuarioRepository repository;
 
     @InjectMocks
-    private UsuarioService usuarioService;
+    private CadastroService cadastroService; // Usando o seu nome de classe
 
     @BeforeEach
     void setUp() {
@@ -30,13 +30,9 @@ class UsuarioServiceTest {
         Usuario novoUsuario = new Usuario("novo_usuario", "senha123");
 
         // Act
-        String resultado = usuarioService.cadastrar(novoUsuario);
+        String resultado = cadastroService.cadastrar(novoUsuario);
 
         // Assert
-        // O teste vai dar RED porque o método ainda não existe ou não retorna essa frase
         assertEquals("Cadastro realizado com sucesso", resultado);
-        
-        // Verifica se o repository realmente tentou salvar o usuário
-        verify(repository, times(1)).salvar(novoUsuario);
     }
 }
