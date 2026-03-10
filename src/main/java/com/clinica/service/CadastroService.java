@@ -28,6 +28,12 @@ public class CadastroService {
         if (usuario.getSenha() == null || usuario.getSenha().trim().isEmpty()) {
             return "usuário sem senha";
         }
+
+        
+        //TC011
+        if (usuario.getEmail() == null || usuario.getEmail().trim().isEmpty()) {
+            return "usuário sem e-mail";
+        }
         
         //TC007
         repository.salvar(usuario);
