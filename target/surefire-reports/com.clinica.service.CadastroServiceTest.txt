@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: com.clinica.service.CadastroServiceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.784 s -- in com.clinica.service.CadastroServiceTest
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.397 s <<< FAILURE! -- in com.clinica.service.CadastroServiceTest
+com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoDataCadastroEstiverVazia -- Time elapsed: 0.035 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	The method setDataCadastro(String) is undefined for the type Usuario
+	resultado cannot be resolved to a variable
+	resultado cannot be resolved to a variable
+
+	at com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoDataCadastroEstiverVazia(CadastroServiceTest.java:120)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

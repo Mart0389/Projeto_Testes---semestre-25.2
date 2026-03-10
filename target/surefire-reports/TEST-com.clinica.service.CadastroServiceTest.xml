@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.clinica.service.CadastroServiceTest" time="3.784" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.clinica.service.CadastroServiceTest" time="5.397" tests="6" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\marti\AppData\Local\Temp\surefire6445502329666143078\surefirebooter-20260310163058088_3.jar C:\Users\marti\AppData\Local\Temp\surefire6445502329666143078 2026-03-10T16-30-57_248-jvmRun1 surefire-20260310163058088_1tmp surefire_0-20260310163058088_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\marti\AppData\Local\Temp\surefire6664505806435025391\surefirebooter-20260310163453267_3.jar C:\Users\marti\AppData\Local\Temp\surefire6664505806435025391 2026-03-10T16-34-52_267-jvmRun1 surefire-20260310163453267_1tmp surefire_0-20260310163453267_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.clinica.service.CadastroServiceTest"/>
     <property name="surefire.test.class.path" value="C:\Users\marti\Downloads\clinica-medica\target\test-classes;C:\Users\marti\Downloads\clinica-medica\target\classes;C:\Users\marti\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\marti\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\marti\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\marti\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\marti\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\marti\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\marti\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\marti\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\marti\.m2\repository\org\mockito\mockito-junit-jupiter\5.5.0\mockito-junit-jupiter-5.5.0.jar;C:\Users\marti\.m2\repository\org\mockito\mockito-core\5.5.0\mockito-core-5.5.0.jar;C:\Users\marti\.m2\repository\net\bytebuddy\byte-buddy\1.14.6\byte-buddy-1.14.6.jar;C:\Users\marti\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.6\byte-buddy-agent-1.14.6.jar;C:\Users\marti\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\marti\AppData\Local\Temp\surefire6445502329666143078\surefirebooter-20260310163058088_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\marti\AppData\Local\Temp\surefire6664505806435025391\surefirebooter-20260310163453267_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.11+7-LTS-207"/>
@@ -58,9 +58,22 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="deveRetornarErroQuandoSenhaEstiverVaziaNoCadastro" classname="com.clinica.service.CadastroServiceTest" time="3.32"/>
-  <testcase name="deveRetornarErroQuandoEmailEstiverVazioNoCadastro" classname="com.clinica.service.CadastroServiceTest" time="0.01"/>
-  <testcase name="deveCadastrarUsuarioComSucesso" classname="com.clinica.service.CadastroServiceTest" time="0.177"/>
-  <testcase name="deveRetornarErroQuandoNomeEstiverVazioNoCadastro" classname="com.clinica.service.CadastroServiceTest" time="0.021"/>
-  <testcase name="deveRetornarErroQuandoCodigoUsuarioEstiverVazio" classname="com.clinica.service.CadastroServiceTest" time="0.058"/>
+  <testcase name="deveRetornarErroQuandoSenhaEstiverVaziaNoCadastro" classname="com.clinica.service.CadastroServiceTest" time="4.961"/>
+  <testcase name="deveRetornarErroQuandoDataCadastroEstiverVazia" classname="com.clinica.service.CadastroServiceTest" time="0.035">
+    <error message="Unresolved compilation problems: &#10;	The method setDataCadastro(String) is undefined for the type Usuario&#10;	resultado cannot be resolved to a variable&#10;	resultado cannot be resolved to a variable&#10;" type="java.lang.Error"><![CDATA[java.lang.Error: 
+Unresolved compilation problems: 
+	The method setDataCadastro(String) is undefined for the type Usuario
+	resultado cannot be resolved to a variable
+	resultado cannot be resolved to a variable
+
+	at com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoDataCadastroEstiverVazia(CadastroServiceTest.java:120)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></error>
+  </testcase>
+  <testcase name="deveRetornarErroQuandoEmailEstiverVazioNoCadastro" classname="com.clinica.service.CadastroServiceTest" time="0.054"/>
+  <testcase name="deveCadastrarUsuarioComSucesso" classname="com.clinica.service.CadastroServiceTest" time="0.116"/>
+  <testcase name="deveRetornarErroQuandoNomeEstiverVazioNoCadastro" classname="com.clinica.service.CadastroServiceTest" time="0.008"/>
+  <testcase name="deveRetornarErroQuandoCodigoUsuarioEstiverVazio" classname="com.clinica.service.CadastroServiceTest" time="0.027"/>
 </testsuite>
