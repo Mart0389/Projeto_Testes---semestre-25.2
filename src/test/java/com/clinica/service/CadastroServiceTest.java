@@ -40,8 +40,6 @@ class CadastroServiceTest {
         assertEquals("usuário cadastrado com sucesso", resultado);
     }
 
-}
-
 @Test // TC008
     void deveRetornarErroQuandoCodigoUsuarioEstiverVazio() {
         
@@ -58,5 +56,10 @@ class CadastroServiceTest {
         
         assertEquals("usuário sem código", resultado);
     }
+
+
+}
+
+
 
 

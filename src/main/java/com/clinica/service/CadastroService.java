@@ -12,10 +12,16 @@ public class CadastroService {
     }
 
     public String cadastrar(Usuario usuario) {
+
+        //TC008
+
+        if (usuario.getLogin() == null || usuario.getLogin().trim().isEmpty()) {
+            return "usuário sem código";
+        }
        
         
+        //TC007
         repository.salvar(usuario);
-        
         
         return "usuário cadastrado com sucesso";
     }
