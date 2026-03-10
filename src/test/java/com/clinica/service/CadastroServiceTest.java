@@ -24,19 +24,22 @@ class CadastroServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test // TC007
-void deveCadastrarUsuarioComSucesso() {
-    // Arrange 
-    Usuario usuario = new Usuario();
-    usuario.setLogin("123"); 
-    usuario.setNome("Rock");
-    usuario.setSenha("123@");
-    usuario.setEmail("rock@gmail.com");
+  @Test // TC007
+    void deveCadastrarUsuarioComSucesso() {
+        // Arrange
+        Usuario usuario = new Usuario();
+        usuario.setLogin("123");
+        usuario.setNome("Rock");
+        usuario.setSenha("123@");
+        usuario.setEmail("rock@gmail.com");
 
-    // Act
-    String resultado = cadastroService.cadastrar(usuario);
+        // Act
+        String resultado = cadastroService.cadastrar(usuario);
 
-    // Assert
-   
-    assertEquals("usuário cadastrado com sucesso", resultado);
+        // Assert
+        assertEquals("usuário cadastrado com sucesso", resultado);
+    }
+
 }
+
+
