@@ -23,11 +23,17 @@ public class LoginService {
         }
 
         Usuario usuario = repository.buscarPorLogin(login);
-        
+
+
         if (usuario == null) {
+       
+        return "O login se encontra errado";
+    }
+        
+       /*  if (usuario == null) {
             return "Usuário não possui cadastro no sistema";
         }
-    
+    */
         // Se o usuário existe, mas a senha não confere (Cenário do TC_005 atual)
         if (!usuario.getSenha().equals(senha)) {
         
