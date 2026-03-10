@@ -56,7 +56,7 @@ class LoginServiceTest {
         assertEquals("Usuário não possui cadastro no sistema", resultado);
     }
 
-    @Test
+    @Test //tive problema na chamada do método, no vscode passava e no github não, assim precisei alterar ele pra conseguir passar o teste green
     void deveRetornarErroQuandoSenhaSeEncontraErrada() {
         // TC 005
         Usuario usuarioCadastrado = new Usuario("usuario", "123@");
@@ -66,4 +66,19 @@ class LoginServiceTest {
 
         assertEquals("A senha se encontra errada", resultado);
     }
+
+@Test
+void deveRetornarErroQuandoLoginInformadoNaoExistir() {
+    // Arrange - TC_006
+    // Simulamos que o banco de dados NÃO encontra o usuário "usuarioo"
+    when(repository.buscarPorLogin("usuarioo")).thenReturn(null);
+
+    // Act
+    String resultado = loginService.logar("usuarioo", "123@");
+
+    // Assert
+    // O teste VAI FALHAR porque o Service ainda não conhece essa frase
+    assertEquals("O login se encontra errado", resultado);
+}
+
 }

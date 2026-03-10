@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: com.clinica.service.LoginServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.733 s -- in com.clinica.service.LoginServiceTest
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.075 s <<< FAILURE! -- in com.clinica.service.LoginServiceTest
+com.clinica.service.LoginServiceTest.deveRetornarErroQuandoLoginInformadoNaoExistir -- Time elapsed: 2.915 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <O login se encontra errado> but was: <Usuário não possui cadastro no sistema>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
+	at com.clinica.service.LoginServiceTest.deveRetornarErroQuandoLoginInformadoNaoExistir(LoginServiceTest.java:81)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
