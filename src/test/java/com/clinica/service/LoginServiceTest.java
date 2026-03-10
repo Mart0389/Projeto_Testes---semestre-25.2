@@ -65,4 +65,18 @@ void deveRetornarErroQuandoLoginEstiverVazio() {
     assertEquals("O campo login é obrigatório", resultado);
 }
 
+@Test
+    void deveRetornarErroQuandoSenhaEstiverVazia() {
+        // Arrange - Login preenchido, mas senha vazia
+        String login = "usuário";
+        String senhaVazia = "";
+
+        // Act
+        String resultado = loginService.logar(login, senhaVazia);
+
+        // Assert
+        // Este teste vai FALHAR porque o Service ainda não valida senha vazia especificamente
+        assertEquals("O campo senha é obrigatório", resultado);
+    }
+
     }
