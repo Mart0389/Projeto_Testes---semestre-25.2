@@ -79,4 +79,21 @@ void deveRetornarErroQuandoLoginEstiverVazio() {
         assertEquals("O campo senha é obrigatório", resultado);
     }
 
+// TC 005 
+    @Test
+void deveRetornarErroQuandoSenhaEstiverIncorreta() {
+    // Arrange
+    Usuario usuarioCadastrado = new Usuario("usuario", "123@");
+   
+    when(repository.buscarPorLogin("usuario")).thenReturn(usuarioCadastrado);
+
+    // Act 
+    String resultado = loginService.logar("usuario", "1234@");
+
+    // Assert
+
+    assertEquals("A senha se encontra errada", resultado);
+}
+
+
     }
