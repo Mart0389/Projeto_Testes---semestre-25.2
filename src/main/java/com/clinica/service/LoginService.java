@@ -12,13 +12,19 @@ public class LoginService {
     }
 
     public String logar(String login, String senha) {
+
+
+        if (login == null || login.trim().isEmpty()) {
+        return "O campo login é obrigatório";
+    }
+
         Usuario usuario = repository.buscarPorLogin(login);
         
         
        
-       if (usuario != null){ //-- adicionado para testar o tc002, tcc003
+       //if (usuario != null) //-- adicionado para testar o tc002, tcc003
         
-        //if (usuario != null && usuario.getSenha().equals(senha)) 
+       if (usuario != null && usuario.getSenha().equals(senha)) {
 
             return "Bem vindo ao sistema";
         }
