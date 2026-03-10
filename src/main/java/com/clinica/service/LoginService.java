@@ -11,44 +11,37 @@ public class LoginService {
         this.repository = repository;
     }
 
+    /**
+     * Realiza a lógica de autenticação baseada nos casos de teste TC_001 a TC_006.
+     */
     public String logar(String login, String senha) {
 
-        if (login == null || login.trim().isEmpty()) {
+        // Validação de campos obrigatórios
+        if (isVazio(login)) {
             return "O campo login é obrigatório";
         }
 
-        // Validação da Senha (TC_004 - Implementação para o GREEN)
-        if (senha == null || senha.trim().isEmpty()) {
+        if (isVazio(senha)) {
             return "O campo senha é obrigatório";
         }
 
         Usuario usuario = repository.buscarPorLogin(login);
 
-
+        // Validação de existência do usuário (TC_006)
         if (usuario == null) {
-       
-        return "O login se encontra errado";
-    }
-        
-       /*  if (usuario == null) {
-            return "Usuário não possui cadastro no sistema";
+            return "O login se encontra errado";
         }
-    */
-        // Se o usuário existe, mas a senha não confere (Cenário do TC_005 atual)
-        if (!usuario.getSenha().equals(senha)) {
         
+        // Validação de credenciais (TC_005)
+        if (!usuario.getSenha().equals(senha)) {
             return "A senha se encontra errada";
         }
 
         return "Bem vindo ao sistema";
+    }
 
-        // --- SEUS COMENTÁRIOS MANTIDOS ABAIXO ---
-        //if (usuario != null) //-- adicionado para testar o tc002, tcc003 
-        
-        //if (usuario != null && usuario.getSenha().equals(senha)) { -- comentado para implementar o código para TC005
-
-          //  return "Bem vindo ao sistema"; -- comentado para implementar o código para TC005
-       // } -- comentado para implementar o código para TC005
-       // return "Usuário ou senha inválidos"; -- comentado para implementar o código para TC005
-    } // <-- Chave que fecha o MÉTODO logar
-} // <-- Chave que fecha a CLASSE LoginService
+    // Método auxiliar para melhorar a leitura do código
+    private boolean isVazio(String texto) {
+        return texto == null || texto.trim().isEmpty();
+    }
+}
