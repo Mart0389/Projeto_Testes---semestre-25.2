@@ -81,19 +81,17 @@ void deveRetornarErroQuandoLoginEstiverVazio() {
     }
 
 // TC 005 
-    @Test
-void deveRetornarErroQuandoSenhaEstiverIncorreta() {
+@Test
+void deveRetornarErroQuandoSenhaSeEncontraErrada() {
     // Arrange
-    Usuario usuarioMock = new Usuario("usuário", "123@");
-        when(repository.buscarPorLogin("usuário")).thenReturn(usuarioMock);
+    Usuario usuarioCadastrado = new Usuario("usuario", "123@");
+    when(repository.buscarPorLogin("usuario")).thenReturn(usuarioCadastrado);
 
-    // Act 
-    String resultado = loginService.logar("usuário", "senha_errada");
+    // Act
+    String resultado = loginService.logar("usuario", "1234@"); // Senha errada conforme imagem
 
     // Assert
-
+    // O teste falhará aqui porque o Service ainda não retorna esta frase específica
     assertEquals("A senha se encontra errada", resultado);
 }
-
-
     }

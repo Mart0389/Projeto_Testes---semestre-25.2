@@ -30,9 +30,10 @@ public class LoginService {
     
         // Se o usuário existe, mas a senha não confere (Cenário do TC_005 atual)
         if (!usuario.getSenha().equals(senha)) {
+        
             return "A senha se encontra errada";
         }
-    
+
         return "Bem vindo ao sistema";
 
         // --- SEUS COMENTÁRIOS MANTIDOS ABAIXO ---
