@@ -51,4 +51,18 @@
         assertEquals("Usuário ou senha inválidos", resultado);
     }
 
+    @Test
+//teste TC003
+void deveRetornarErroQuandoLoginEstiverVazio() {
+    // Arrange
+    String loginVazio = "";
+    String senha = "123@";
+
+    // Act
+    String resultado = loginService.logar(loginVazio, senha);
+
+    // Assert
+    assertEquals("O campo login é obrigatório", resultado);
+}
+
     }
