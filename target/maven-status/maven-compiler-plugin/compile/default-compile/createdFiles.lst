@@ -1,0 +1,4 @@
+com\clinica\service\CadastroService.class
+com\clinica\model\Usuario.class
+com\clinica\service\LoginService.class
+com\clinica\repository\UsuarioRepository.class
