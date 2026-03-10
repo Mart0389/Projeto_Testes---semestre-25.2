@@ -65,6 +65,7 @@ void deveRetornarErroQuandoLoginEstiverVazio() {
     assertEquals("O campo login é obrigatório", resultado);
 }
 
+//TC004
 @Test
     void deveRetornarErroQuandoSenhaEstiverVazia() {
         // Arrange - Login preenchido, mas senha vazia
@@ -83,12 +84,11 @@ void deveRetornarErroQuandoLoginEstiverVazio() {
     @Test
 void deveRetornarErroQuandoSenhaEstiverIncorreta() {
     // Arrange
-    Usuario usuarioCadastrado = new Usuario("usuario", "123@");
-   
-    when(repository.buscarPorLogin("usuario")).thenReturn(usuarioCadastrado);
+    Usuario usuarioMock = new Usuario("usuário", "123@");
+        when(repository.buscarPorLogin("usuário")).thenReturn(usuarioMock);
 
     // Act 
-    String resultado = loginService.logar("usuario", "1234@");
+    String resultado = loginService.logar("usuário", "senha_errada");
 
     // Assert
 
