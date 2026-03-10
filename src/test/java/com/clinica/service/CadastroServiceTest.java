@@ -32,7 +32,7 @@ class CadastroServiceTest {
         usuario.setNome("Rock");
         usuario.setSenha("123@");
         usuario.setEmail("rock@gmail.com");
-
+        usuario.setDataCadastro("10/03/2026");
         // Act
         String resultado = cadastroService.cadastrar(usuario);
 
@@ -109,7 +109,7 @@ class CadastroServiceTest {
     }
 
 
-    @Test // TC_012
+   @Test // TC_012
     void deveRetornarErroQuandoDataCadastroEstiverVazia() {
         // Arrange 
         Usuario usuarioSemData = new Usuario();
@@ -117,14 +117,15 @@ class CadastroServiceTest {
         usuarioSemData.setNome("Rock");
         usuarioSemData.setSenha("123@");
         usuarioSemData.setEmail("rock@gmail.com");
-        usuarioSemData.setDataCadastro("");  resultado = cadastroService.cadastrar(usuarioSemData);
+        usuarioSemData.setDataCadastro(""); 
+
+        // Act
+        String resultado = cadastroService.cadastrar(usuarioSemData);
 
         // Assert
-        
         assertEquals("usuário sem data de cadastro", resultado);
-    }
-
-}
+    } 
+} 
 
 
 

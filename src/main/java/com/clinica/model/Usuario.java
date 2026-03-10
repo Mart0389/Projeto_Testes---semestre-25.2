@@ -5,6 +5,7 @@
         private String senha;
         private String nome;
         private String email; 
+        private String dataCadastro;
 
         public Usuario() {}
     
@@ -33,6 +34,10 @@
         }
 
 
+        public String getDataCadastro() {
+            return dataCadastro;
+        }
+
         public void setNome(String nome) {
             this.nome = nome;
         }
@@ -48,6 +53,11 @@
 
          public void setEmail(String email) {
             this.email = email;
+        }
+
+
+        public void setDataCadastro(String dataCadastro) {
+            this.dataCadastro = dataCadastro;
         }
 
     }
