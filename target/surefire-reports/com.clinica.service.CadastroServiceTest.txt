@@ -1,4 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: com.clinica.service.CadastroServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.317 s -- in com.clinica.service.CadastroServiceTest
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.234 s <<< FAILURE! -- in com.clinica.service.CadastroServiceTest
+com.clinica.service.CadastroServiceTest.deveCadastrarUsuarioComSucesso -- Time elapsed: 2.999 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Cadastro realizado com sucesso> but was: <usuário sem nome>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
+	at com.clinica.service.CadastroServiceTest.deveCadastrarUsuarioComSucesso(CadastroServiceTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoLoginEstiverVazioNoCadastro -- Time elapsed: 0.013 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <O campo login é obrigatório> but was: <usuário sem código>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1141)
+	at com.clinica.service.CadastroServiceTest.deveRetornarErroQuandoLoginEstiverVazioNoCadastro(CadastroServiceTest.java:49)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

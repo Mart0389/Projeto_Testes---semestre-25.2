@@ -4,8 +4,10 @@ public class Usuario {
     private String login;
     private String senha;
     private String nome;
+    private String email; 
+   
 
-    public Usuario(String login, String senha) {
+     public Usuario(String login, String senha) {
         this.login = login;
         this.senha = senha;
     }
@@ -25,6 +27,10 @@ public class Usuario {
 
     public String getSenha() {
         return senha;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
 }
