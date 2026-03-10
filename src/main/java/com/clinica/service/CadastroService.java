@@ -12,14 +12,18 @@ public class CadastroService {
     }
 
     public String cadastrar(Usuario usuario) {
-        // implementando TC008 para validar 
+        // ImplementaçãoTC008 
+       
         if (usuario.getLogin() == null || usuario.getLogin().trim().isEmpty()) {
-        return "O campo login é obrigatório";
-        
-    }
+            return "usuário sem código"; 
+        }
 
-    repository.salvar(usuario);
-    return "Cadastro realizado com sucesso";
-}
+        // Implementação para o TC009 
+        if (usuario.getNome() == null || usuario.getNome().trim().isEmpty()) {
+            return "usuário sem nome";
+        }
 
-}
+        repository.salvar(usuario);
+        return "Cadastro realizado com sucesso";
+    } 
+} 
