@@ -14,30 +14,27 @@ public class CadastroService {
     public String cadastrar(Usuario usuario) {
 
         //TC008
-
-        if (usuario.getLogin() == null || usuario.getLogin().trim().isEmpty()) {
+        if (isVazio(usuario.getLogin())) {
             return "usuário sem código";
         }
-       
-       //TC009
-        if (usuario.getNome() == null || usuario.getNome().trim().isEmpty()) {
+        
+        //TC009
+        if (isVazio(usuario.getNome())) {
             return "usuário sem nome";
         }
 
-       //TC010
-        if (usuario.getSenha() == null || usuario.getSenha().trim().isEmpty()) {
+        //TC010
+        if (isVazio(usuario.getSenha())) {
             return "usuário sem senha";
         }
 
-        
         //TC011
-        if (usuario.getEmail() == null || usuario.getEmail().trim().isEmpty()) {
+        if (isVazio(usuario.getEmail())) {
             return "usuário sem e-mail";
         }
         
         //TC012
-               
-        if (usuario.getDataCadastro() == null || usuario.getDataCadastro().trim().isEmpty()) {
+        if (isVazio(usuario.getDataCadastro())) {
             return "usuário sem data de cadastro";
         }
 
@@ -45,5 +42,9 @@ public class CadastroService {
         repository.salvar(usuario);
         
         return "usuário cadastrado com sucesso";
+    }
+
+    private boolean isVazio(String valor) {
+        return valor == null || valor.trim().isEmpty();
     }
 }
