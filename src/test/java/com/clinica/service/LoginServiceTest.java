@@ -36,4 +36,19 @@
             // Assert (Afirmar)
             assertEquals("Bem vindo ao sistema", resultado);
         }
+
+
+        @Test
+    void deveRetornarErroQuandoSenhaForIncorreta() {
+        // Arrange - Dados do seu TC_002
+        Usuario usuarioNoBanco = new Usuario("usuário", "123@");
+        when(repository.buscarPorLogin("usuário")).thenReturn(usuarioNoBanco);
+
+        // Act
+        String resultado = loginService.logar("usuário", "senha_errada");
+
+        // Assert
+        assertEquals("Usuário ou senha inválidos", resultado);
+    }
+
     }
