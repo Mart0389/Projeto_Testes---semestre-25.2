@@ -1,97 +1,69 @@
-    package com.clinica.service;
+package com.clinica.service;
 
-    import static org.junit.jupiter.api.Assertions.*;
-    import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
-    import com.clinica.model.Usuario;
-    import com.clinica.repository.UsuarioRepository;
-    import org.junit.jupiter.api.BeforeEach;
-    import org.junit.jupiter.api.Test;
-    import org.mockito.InjectMocks;
-    import org.mockito.Mock;
-    import org.mockito.MockitoAnnotations;
+import com.clinica.model.Usuario;
+import com.clinica.repository.UsuarioRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-    class LoginServiceTest {
+class LoginServiceTest {
 
-        @Mock
-        private UsuarioRepository repository;
+    @Mock
+    private UsuarioRepository repository;
 
-        @InjectMocks
-        private LoginService loginService;
+    @InjectMocks
+    private LoginService loginService;
 
-        @BeforeEach
-        void setUp() {
-            MockitoAnnotations.openMocks(this);
-        }
-
-        @Test
-        void deveRealizarLoginComSucesso() {
-            // Arrange (Organizar) - Dados do seu TC_001
-            Usuario usuarioMock = new Usuario("usuário", "123@");
-            when(repository.buscarPorLogin("usuário")).thenReturn(usuarioMock);
-
-            // Act (Agir)
-            String resultado = loginService.logar("usuário", "123@");
-
-            // Assert (Afirmar)
-            assertEquals("Bem vindo ao sistema", resultado);
-        }
-
-
-        @Test
-    void deveRetornarErroQuandoSenhaForIncorreta() {
-        // Arrange - Dados do seu TC_002
-        Usuario usuarioNoBanco = new Usuario("usuário", "123@");
-        when(repository.buscarPorLogin("usuário")).thenReturn(usuarioNoBanco);
-
-        // Act
-        String resultado = loginService.logar("usuário", "senha_errada");
-
-        // Assert
-        assertEquals("Usuário ou senha inválidos", resultado);
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
-//teste TC003
-void deveRetornarErroQuandoLoginEstiverVazio() {
-    // Arrange
-    String loginVazio = "";
-    String senha = "123@";
+    void deveRealizarLoginComSucesso() {
+        Usuario usuarioMock = new Usuario("usuário", "123@");
+        when(repository.buscarPorLogin("usuário")).thenReturn(usuarioMock);
 
-    // Act
-    String resultado = loginService.logar(loginVazio, senha);
+        String resultado = loginService.logar("usuário", "123@");
 
-    // Assert
-    assertEquals("O campo login é obrigatório", resultado);
-}
+        assertEquals("Bem vindo ao sistema", resultado);
+    }
 
-//TC004
-@Test
+    @Test
+    void deveRetornarErroQuandoLoginEstiverVazio() {
+        String resultado = loginService.logar("", "123@");
+        assertEquals("O campo login é obrigatório", resultado);
+    }
+
+    @Test
     void deveRetornarErroQuandoSenhaEstiverVazia() {
-        // Arrange - Login preenchido, mas senha vazia
-        String login = "usuário";
-        String senhaVazia = "";
-
-        // Act
-        String resultado = loginService.logar(login, senhaVazia);
-
-        // Assert
-        // Este teste vai FALHAR porque o Service ainda não valida senha vazia especificamente
+        String resultado = loginService.logar("usuário", "");
         assertEquals("O campo senha é obrigatório", resultado);
     }
 
-// TC 005 
-@Test
-void deveRetornarErroQuandoSenhaSeEncontraErrada() {
-    // Arrange
-    Usuario usuarioCadastrado = new Usuario("usuario", "123@");
-    when(repository.buscarPorLogin("usuario")).thenReturn(usuarioCadastrado);
+    @Test
+    void deveRetornarErroQuandoUsuarioNaoPossuiCadastro() {
+        // Simula que o repositório não encontrou o usuário
+        when(repository.buscarPorLogin("usuario_inexistente")).thenReturn(null);
 
-    // Act
-    String resultado = loginService.logar("usuario", "1234@"); // Senha errada conforme imagem
+        String resultado = loginService.logar("usuario_inexistente", "123@");
 
-    // Assert
-    // O teste falhará aqui porque o Service ainda não retorna esta frase específica
-    assertEquals("A senha se encontra errada", resultado);
-}
+        assertEquals("Usuário não possui cadastro no sistema", resultado);
     }
+
+    @Test
+    void deveRetornarErroQuandoSenhaSeEncontraErrada() {
+        // TC 005
+        Usuario usuarioCadastrado = new Usuario("usuario", "123@");
+        when(repository.buscarPorLogin("usuario")).thenReturn(usuarioCadastrado);
+
+        String resultado = loginService.logar("usuario", "1234@");
+
+        assertEquals("A senha se encontra errada", resultado);
+    }
+}
