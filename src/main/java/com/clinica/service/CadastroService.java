@@ -19,6 +19,11 @@ public class CadastroService {
             return "usuário sem código";
         }
        
+       //TC009
+        if (usuario.getNome() == null || usuario.getNome().trim().isEmpty()) {
+            return "usuário sem nome";
+        }
+
         
         //TC007
         repository.salvar(usuario);
