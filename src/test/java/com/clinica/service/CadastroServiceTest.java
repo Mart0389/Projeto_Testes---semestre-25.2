@@ -42,4 +42,21 @@ class CadastroServiceTest {
 
 }
 
+@Test // TC008
+    void deveRetornarErroQuandoCodigoUsuarioEstiverVazio() {
+        
+        Usuario usuarioSemCodigo = new Usuario();
+        usuarioSemCodigo.setLogin(""); 
+        usuarioSemCodigo.setNome("Rock");
+        usuarioSemCodigo.setSenha("123@");
+        usuarioSemCodigo.setEmail("rock@gmail.com");
+
+        // Act
+        String resultado = cadastroService.cadastrar(usuarioSemCodigo);
+
+        // Assert
+        
+        assertEquals("usuário sem código", resultado);
+    }
+
 
