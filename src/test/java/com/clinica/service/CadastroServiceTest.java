@@ -35,4 +35,20 @@ class CadastroServiceTest {
         // Assert
         assertEquals("Cadastro realizado com sucesso", resultado);
     }
+
+@Test
+void deveRetornarErroQuandoLoginEstiverVazioNoCadastro() {
+    // Arrange - TC008
+    
+    Usuario usuarioSemLogin = new Usuario("", "senha123");
+
+    // Act
+    String resultado = cadastroService.cadastrar(usuarioSemLogin);
+
+    // Assert
+    assertEquals("O campo login é obrigatório", resultado);
+}
+
+
+
 }
